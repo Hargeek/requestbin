@@ -57,3 +57,12 @@ Contributors
 ------------
  * Barry Carlyon <barry@barrycarlyon.co.uk>
  * Jeff Lindsay <progrium@gmail.com>
+
+### docker build
+
+docker build for M1 Mac
+```shell
+docker buildx create --use --name m1_builder
+docker buildx inspect m1_builder --bootstrap
+docker buildx build -t ssgeek/requestbin --platform=linux/arm,linux/arm64,linux/amd64 . --push
+```
